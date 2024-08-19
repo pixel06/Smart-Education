@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Competition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="res">
+        <h1>Quiz Competition</h1>
+    </div>
+    <form action="{{ url_for('submit') }}" method="post">
+        {% for question in questions %}
+        <fieldset>
+            <legend>{{ question.question }}</legend>
+            {% for option in question.options %}
+            <label>
+                <input 
+                    type="radio" 
+                    name="question_{{ loop.index0 }}" 
+                    value="{{ option }}"
+                    {% if user_answers.get('question_' ~ loop.index0) == option %} checked {% endif %}
+                >
+                {{ option }}
+            </label><br>
+            {% endfor %}
+        </fieldset>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
