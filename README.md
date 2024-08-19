@@ -10,10 +10,10 @@ Installation
 To run this application locally, follow these steps:
 
 # Prerequisites
-Python 
-Flask
-HTML
-CSS
+Python <br/>
+Flask <br/>
+HTML <br/>
+CSS <br/>
 
 ![image](https://github.com/user-attachments/assets/14426b1b-1304-4ae5-b47c-a9b1e65a36ff)
 ![image](https://github.com/user-attachments/assets/c956f29d-00af-4f36-b3b9-d2d312dfee81)
