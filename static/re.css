@@ -1,0 +1,93 @@
+/* re.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('/static/bg1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #fff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    background-color: rgba(46, 46, 46, 0.7);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #4CAF50;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:hover {
+    background-color: #ffffff25;
+}
+
+.res {
+    background-color: rgba(46, 46, 46, 0.842);
+    border-radius: 30px;
+    padding: 10px;
+    margin: 10px auto;
+    width: 40%;
+    max-width: 300px;
+}
+
+/* Highlighting styles for quiz results */
+.correct {
+    color: #4CAF50;
+}
+
+.incorrect {
+    color:  #F44336;
+}
+
+.option {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.option.correct {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.option.incorrect {
+    color:  #F44336;
+    font-weight: bold;
+}
+
+.option.selected {
+    font-weight: bold;
+}

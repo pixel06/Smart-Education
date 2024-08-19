@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='re.css') }}">
+</head>
+
+<body>
+    <div class="res">
+        <h1>Quiz Results</h1>
+        <h3>Your score: {{ score }} out of {{ total }}</h3>
+    </div>
+    <ul>
+        {% for result in results %}
+        <li>
+            <strong>Question:</strong> {{ result.question }}<br>
+            <strong>Options:</strong><br>
+            {% for option in result.options %}
+            {% if option == result.correct_answer %}
+            <span class="option correct">{{ option }}</span><br>
+            {% elif option == result.user_answer %}
+            <span class="option incorrect">{{ option }}</span><br>
+            {% else %}
+            <span class="option">{{ option }}</span><br>
+            {% endif %}
+            {% endfor %}
+            <br><strong>Your Answer:</strong> <span
+                class="option {{ 'incorrect' if result.user_answer != result.correct_answer else 'correct' }}">{{
+                result.user_answer or 'None' }}</span><br>
+            <strong>Correct Answer:</strong> <span class="option correct">{{ result.correct_answer }}</span><br>
+            <strong>Status:</strong> {{ result.status }}<br><br>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Take the Quiz Again</a>
+</body>
+
+</html>
